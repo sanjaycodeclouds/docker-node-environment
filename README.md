@@ -167,8 +167,9 @@ Go to your GitHub repo → Settings → Secrets and Variables → Actions:
 </pre>
 
 ### Step 2: 🛠️ Setup GitHub Actions Workflow
+##### Setup docker-node-environment.yml
 <pre>
-Setup .github > workflows > docker-node-environment.yml
+.github > workflows > docker-node-environment.yml
 </pre>
 
 ### Step 3: 🐳 Docker Hub Setup
