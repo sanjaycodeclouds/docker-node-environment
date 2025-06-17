@@ -1,14 +1,18 @@
 # docker-node-environment
 
+A fully Dockerized Node.js development environment using Express, Mongoose, and other essential packages. Includes CI/CD integration using GitHub Actions to automatically build and push Docker images to Docker Hub.
+
+## 📁 Project Structure
+
 ```bash
-## Main project setup (this is not needed for Team Members)
------------------------------------------------------------
 # Step 1: Folder Structure
 #    ├── app.js
+#    ├── connection.js
 #    ├── package.json
+#    ├── .env
 #    ├── Dockerfile
 #    ├── docker-compose.yml
-#    ├── .env
+#    ├── .github/workflows/docker-node-environment-deploy.yml
 
 # Step 2:
 #   npm i --save-dev nodemon
@@ -20,11 +24,18 @@
 
 # Step 3:
 #   Setup .env file
-#   PORT=?
-#   MONDOGB_URL=?
+#   PORT=3000
+#   MONDOGB_URL=mongodb+srv://admin:<password>@cluster0.b4laov4.mongodb.net/<db_name>?retryWrites=true&w=majority&appName=Cluster0
 
 # Step 4:
 #   Setup connection.js file for MongoDB connect
+const mongoose = require("mongoose")
+function connectToMongoDB(url) {
+    return mongoose.connect(url)
+}
+module.exports = {
+    connectToMongoDB,
+}
 
 # Step 5:
 #   Setup app.js file
