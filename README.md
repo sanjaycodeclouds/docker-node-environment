@@ -40,3 +40,31 @@
 #     • Share setup with your team
 #     • Running multiple services (like Node.js + MongoDB)
 #     • Want to simplify your Docker commands
+
+
+## CI/CD setup (this is not needed for Team Members)
+----------------------------------------------------
+# Step 1:
+#   Switch to deloper branch (recommended)
+
+# Step 2:
+#   Setup .github > workflows > docker-node-environment.yml
+
+# Step 3:
+#   Go to https://hub.docker.com/
+#   Click on your profile > Account Settings
+#   Go to Personal Access Token
+#   Give it a name like github-ci-cd-token, set expiration
+#   Choose access level: Read/Write
+#   Click Generate
+#   Copy the token (you won’t see it again!)
+
+# Step 4:
+#   Then add this to GitHub repo:
+#     • Go to your GitHub repo → Settings → Secrets and variables → Actions
+#     • Click New repository secret
+#     • Name: DOCKERHUB_USERNAME
+#     • Value: Your Docker Hub username
+#     • Click New repository secret
+#     • Name: DOCKERHUB_TOKEN
+#     •	Value: The Docker Hub token you just generated
