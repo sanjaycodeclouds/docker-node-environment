@@ -159,19 +159,19 @@ jobs:
 
 ### 🔄 CI/CD Setup with GitHub Actions
 
-##### Step 1: 🔐 Create Secrets in GitHub
+### Step 1: 🔐 Create Secrets in GitHub
 <pre>
 Go to your GitHub repo → Settings → Secrets and Variables → Actions:
   DOCKERHUB_USERNAME: your Docker Hub username
   DOCKERHUB_TOKEN: Docker Hub access token with read/write access
 </pre>
 
-##### Step 2:
+### Step 2:
 <pre>
 Setup .github > workflows > docker-node-environment.yml
 </pre>
 
-##### Step 3:
+### Step 3:
 <pre>
 Go to https://hub.docker.com/
 Click on your profile > Account Settings
@@ -182,7 +182,7 @@ Click Generate
 Copy the token (you won’t see it again!)
 </pre>
 
-##### Step 4:
+### Step 4:
 <pre>
 Add this to GitHub repo:
   • Go to your GitHub repo → Settings → Secrets and variables → Actions
@@ -194,7 +194,7 @@ Add this to GitHub repo:
   •	Value: The Docker Hub token you just generated
 </pre>
 
-##### Step 4:
+### Step 4:
 <pre>
 Pushing code to the developer branch
 Switch to the Main Branch, merge developer branch here
