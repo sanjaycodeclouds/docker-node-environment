@@ -1,0 +1,15 @@
+version: '3.8'  # Introduced in Docker Engine 19.03+, Works with Docker Desktop and most cloud providers
+
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile  # folder where Dockerfile is located where Node.js app (already containerized)
+    ports:
+      - "3000:3000"   # Port mapping (host 3000 → container 3000)
+    environment:      # Environment variables (for Port and MongoDB connection)
+      - PORT=3000
+      - MONGODB_URL=mongodb+srv://admin:oH5i0ldJV0Np0EEE@cluster0.b4laov4.mongodb.net/deocker_node_environment?retryWrites=true&w=majority&appName=Cluster0
+    volumes:          # Volume mapping (for live code reload in dev)
+      - .:/app
+      - /app/node_modules
