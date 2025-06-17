@@ -90,9 +90,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # These commands do not install packages on your team members’ local machines. Instead:
-#	•	They run inside the Docker image at build time
-#	•	The resulting image has all packages preinstalled
-#	•	When your team runs the container, everything is already set up
+#   • They run inside the Docker image at build time
+#	• The resulting image has all packages preinstalled
+#	• When your team runs the container, everything is already set up
 
 # Install all dependencies from package.json (express, mongoose, etc.)
 RUN npm install
@@ -111,12 +111,48 @@ CMD ["nodemon", "app.js"]
 ```
 
 ### Step 7: ⚙️ Docker Compose (Optional)
-#####   Setup docker-compose.yml
+#####   Setup docker-node-environment-deploy.yml
 #####   This file is not necessary but it includes some features like:
 #####     • This will overcome to build the docker everytime
 #####     • Share setup with your team
 #####     • Running multiple services (like Node.js + MongoDB)
 #####     • Want to simplify your Docker commands
+```bash
+name: Build & Push Docker Image
+
+on:
+  push:
+    branches:
+      - main  # Only trigger when pushing/merging to main branch
+
+jobs:
+  docker-build-and-push:
+    name: Build Docker Image and Push to Docker Hub
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            sanjaykarmakar/docker-node-environment:latest
+            sanjaykarmakar/docker-node-environment:v1.0.0
+            sanjaykarmakar/docker-node-environment:${{ github.sha }}
+```
 
 
 ## CI/CD setup (this is not needed for Team Members)
