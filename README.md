@@ -111,12 +111,14 @@ CMD ["nodemon", "app.js"]
 ```
 
 ### Step 7: ⚙️ Docker Compose (Optional)
+<pre>
 #####   Setup docker-node-environment-deploy.yml
 #####   This file is not necessary but it includes some features like:
 #####     • This will overcome to build the docker everytime
 #####     • Share setup with your team
 #####     • Running multiple services (like Node.js + MongoDB)
 #####     • Want to simplify your Docker commands
+</pre>
 ```bash
 name: Build & Push Docker Image
 
@@ -155,9 +157,17 @@ jobs:
 ```
 
 
-## CI/CD setup (this is not needed for Team Members)
-----------------------------------------------------
-# Step 1:
+### 🔄 CI/CD Setup with GitHub Actions
+
+##### Step 1: 🔐 Create Secrets in GitHub
+<pre>
+Go to your GitHub repo → Settings → Secrets and Variables → Actions:
+	•	DOCKERHUB_USERNAME: your Docker Hub username
+	•	DOCKERHUB_TOKEN: Docker Hub access token with read/write access
+</pre>
+
+
+
 #   Switch to deloper branch (recommended)
 
 # Step 2:
