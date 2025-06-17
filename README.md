@@ -271,9 +271,9 @@ docker run -d -p 5001:5001 sanjaykarmakar/docker-node-environment:v1.1.0
 
 
 ### 📝 Changelog (Manual)
-##### [1.0.0] – 2025-06-15
+##### [1.0.0] – 2025-06-17
 🎉 Initial Release
-•	Node.js app containerized with Docker.
-•	MongoDB connection via mongoose.
-•	CI/CD pipeline set up via GitHub Actions.
-•	Pushed Docker image to Docker Hub:
+  • Node.js app containerized with Docker.
+  • MongoDB connection via mongoose.
+  • CI/CD pipeline set up via GitHub Actions.
+  • Pushed Docker image to Docker Hub.
