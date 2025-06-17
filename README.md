@@ -1,7 +1,8 @@
 # docker-node-environment
 
-### Main project (this is not needed for Team Members)
 ```bash
+## Main project (this is not needed for Team Members)
+-----------------------------------------------------
 # Step 1: Folder Structure
 #    ├── app.js
 #    ├── package.json
