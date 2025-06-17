@@ -59,13 +59,7 @@ app.use(bodyParser.urlencoded())
 // Connect with MongoDB
 const { connectToMongoDB } = require("./connection")
 
-connectToMongoDB(MONGODB_URL)
-    .then(() => {
-        console.log(`MongoDB connected successfully.`);
-    })
-    .catch((err) => {
-        console.log(`Error in MongoDB connection.`, err.message)
-    })
+connectToMongoDB(MONGODB_URL).then(() => {console.log(`MongoDB connected successfully.`);}).catch((err) => {console.log(`Error in MongoDB connection.`, err.message)})
 
 // Routes
 app.get("/", (req, res) => {
