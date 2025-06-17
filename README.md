@@ -1,16 +1,13 @@
 # docker-node-environment
 
 ### Main project (this is not needed for Team Members)
-### --------------------------------------------------
-##### Step 1: Folder Structure
-
 ```bash
+##### Step 1: Folder Structure
 #    ├── app.js
 #    ├── package.json
 #    ├── Dockerfile
 #    ├── docker-compose.yml
 #    ├── .env
-
 
 # Step 2:
 #   npm i --save-dev nodemon
@@ -20,25 +17,20 @@
 #   npm i --save mongoose
 #   npm i --save cors
 
-
 # Step 3:
 #   Set up .env file
 #   PORT=?
 #   MONDOGB_URL=?
 
-
 # Step 4:
 #   Set up connection.js file for MongoDB connect
-
 
 # Step 5:
 #   Set up app.js file
 
-
 # Step 6: 
 #   Set up "Dockerfile"
 #   This file include all the necessary dependencies to run the container
-
 
 # Step 7:
 #   Set up docker-compose.yml
