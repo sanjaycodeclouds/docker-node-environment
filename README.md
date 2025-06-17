@@ -68,3 +68,7 @@
 #     • Click New repository secret
 #     • Name: DOCKERHUB_TOKEN
 #     •	Value: The Docker Hub token you just generated
+
+# Step 4:
+#   Pushing code to the developer branch
+#   Switch to the Main Branch, merge developer here
