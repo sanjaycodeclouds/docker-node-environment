@@ -110,7 +110,15 @@ EXPOSE 3000
 CMD ["nodemon", "app.js"]
 ```
 
-### Step 7: ⚙️ Docker Compose (Optional) - Setup GitHub Actions Workflow
+### Step 7: 📤 Git Push & Commit
+<pre>
+Pushing code to the branch
+</pre>
+
+
+### 🔄 CI/CD Setup with GitHub Actions
+
+### Step 1: ⚙️ Setup GitHub Actions Workflow
 #####   Setup docker-node-environment-deploy.yml
 <pre>
 .github > workflows > docker-node-environment.yml
@@ -159,17 +167,14 @@ jobs:
             sanjaykarmakar/docker-node-environment:${{ github.sha }}
 ```
 
-
-### 🔄 CI/CD Setup with GitHub Actions
-
-### Step 1: 🔐 Create Secrets in GitHub
+### Step 2: 🔐 Create Secrets in GitHub
 <pre>
 Go to your GitHub repo → Settings → Secrets and Variables → Actions:
   • DOCKERHUB_USERNAME: your Docker Hub username
   • DOCKERHUB_TOKEN: Docker Hub access token with read/write access
 </pre>
 
-### Step 2: 🐳 Docker Hub Setup
+### Step 3: 🐳 Docker Hub Setup
 <pre>
 Docker Hub setup:
   • Go to https://hub.docker.com/
@@ -181,7 +186,7 @@ Docker Hub setup:
   • Copy the token (you won’t see it again!)
 </pre>
 
-### Step 3: 🐙 GitHub Actions CI/CD Setup
+### Step 4: 🐙 GitHub Actions CI/CD Setup
 <pre>
 Add this to GitHub repo:
   • Go to your GitHub repo → Settings → Secrets and variables → Actions
@@ -193,7 +198,7 @@ Add this to GitHub repo:
   • Value: The Docker Hub token you just generated
 </pre>
 
-### Step 4: 📤 Git Push & Commit
+### Step 5: 📤 Git Push & Commit
 <pre>
 Pushing code to the developer branch
 Switch to the Main Branch, merge developer branch here
