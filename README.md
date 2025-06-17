@@ -17,10 +17,10 @@ A fully Dockerized Node.js development environment using Express, Mongoose, and 
 ```bash
 npm install --save express body-parser mongoose cors dotenv
 npm install --save-dev nodemon
-```bash
+```
 
-# Step 3:
-#   Setup .env file
+### Step 3: 🛠️ Configure Environment
+#####   Setup .env file
 #   PORT=3000
 #   MONDOGB_URL=mongodb+srv://admin:<password>@cluster0.b4laov4.mongodb.net/<db_name>?retryWrites=true&w=majority&appName=Cluster0
 
