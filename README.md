@@ -2,7 +2,7 @@
 
 ```bash
 ## Main project setup (this is not needed for Team Members)
------------------------------------------------------
+-----------------------------------------------------------
 # Step 1: Folder Structure
 #    ├── app.js
 #    ├── package.json
