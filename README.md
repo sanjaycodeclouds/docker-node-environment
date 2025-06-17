@@ -35,7 +35,7 @@
 # Step 7:
 #   Set up docker-compose.yml
 #   This file is not necessary but it includes some features like:
-#	    •	This will overcome to build the docker everytime
-#	    •	Share setup with your team
-#	    •	Running multiple services (like Node.js + MongoDB)
-#	    •	Want to simplify your Docker commands
+#     • This will overcome to build the docker everytime
+#	  •  Share setup with your team
+#	  •  Running multiple services (like Node.js + MongoDB)
+#	  •  Want to simplify your Docker commands
