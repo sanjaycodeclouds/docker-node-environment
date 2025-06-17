@@ -115,10 +115,45 @@ CMD ["nodemon", "app.js"]
 Pushing code to the branch
 </pre>
 
+### Step 8: 🔨 Push Docker Image to Docker Hub Manually (without CI/CD)
+<pre>
+Login to Docker Hub from CLI
+</pre>
+```bash
+docker login
+```
+
+### Step 9: 🛠️ Build the Docker Image
+```bash
+docker build -t sanjaykarmakar/docker-node-environment:latest .
+```
+
+### Step 10: 🏷️ Tag with Version (optional but recommended)
+```bash
+docker tag sanjaykarmakar/docker-node-environment:latest sanjaykarmakar/docker-node-environment:v1.0.0
+```
+
+### Step 11: 🚀 Push the Image to Docker Hub
+```bash
+# Push the latest tag
+docker push sanjaykarmakar/docker-node-environment:latest
+
+# Push the versioned tag
+docker push sanjaykarmakar/docker-node-environment:v1.0.0
+```
+
+### Step 12: ✅ Done!
+<pre>
+Now your image will be available for your team to pull and use:
+</pre>
+```bash
+docker pull sanjaykarmakar/docker-node-environment:latest
+```
+
 
 ### 🔄 CI/CD Setup with GitHub Actions
 
-### Step 1: ⚙️ Setup GitHub Actions Workflow
+### Step 1: ⚙️ GitHub Actions Workflow
 #####   Setup docker-node-environment-deploy.yml
 <pre>
 .github > workflows > docker-node-environment.yml
