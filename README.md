@@ -71,4 +71,4 @@
 
 # Step 4:
 #   Pushing code to the developer branch
-#   Switch to the Main Branch, merge developer here
+#   Switch to the Main Branch, merge developer branch here
