@@ -162,8 +162,8 @@ jobs:
 ### Step 1: 🔐 Create Secrets in GitHub
 <pre>
 Go to your GitHub repo → Settings → Secrets and Variables → Actions:
-  DOCKERHUB_USERNAME: your Docker Hub username
-  DOCKERHUB_TOKEN: Docker Hub access token with read/write access
+  • DOCKERHUB_USERNAME: your Docker Hub username
+  • DOCKERHUB_TOKEN: Docker Hub access token with read/write access
 </pre>
 
 ### Step 2:
@@ -173,13 +173,14 @@ Setup .github > workflows > docker-node-environment.yml
 
 ### Step 3:
 <pre>
-Go to https://hub.docker.com/
-Click on your profile > Account Settings
-Go to Personal Access Token
-Give it a name like github-ci-cd-token, set expiration
-Choose access level: Read/Write
-Click Generate
-Copy the token (you won’t see it again!)
+Docker Hub setup:
+  • Go to https://hub.docker.com/
+  • Click on your profile > Account Settings
+  • Go to Personal Access Token
+  • Give it a name like github-ci-cd-token, set expiration
+  • Choose access level: Read/Write
+  • Click Generate
+  • Copy the token (you won’t see it again!)
 </pre>
 
 ### Step 4:
