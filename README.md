@@ -228,7 +228,8 @@ Add this to GitHub repo:
 ### Step 4: 📤 Git Push & Commit
 <pre>
 Pushing code to the developer branch
-Switch to the Main Branch, merge developer branch here
+Switch to the Main Branch, merge developer branch
+Push the main branch
 </pre>
 
 
