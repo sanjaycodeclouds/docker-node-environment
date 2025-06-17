@@ -59,7 +59,13 @@ app.use(bodyParser.urlencoded())
 // Connect with MongoDB
 const { connectToMongoDB } = require("./connection")
 
-connectToMongoDB(MONGODB_URL).then(() => {console.log(`MongoDB connected successfully.`);}).catch((err) => {console.log(`Error in MongoDB connection.`, err.message)})
+connectToMongoDB(MONGODB_URL)
+    .then(() => {
+        console.log(`MongoDB connected successfully.`);
+    })
+    .catch((err) => {
+        console.log(`Error in MongoDB connection.`, err.message)
+    })
 
 // Routes
 app.get("/", (req, res) => {
@@ -68,18 +74,49 @@ app.get("/", (req, res) => {
 
 // Server Connection
 app.listen(PORT, () => { console.log(`Server started at port: ${PORT}`);})
+```
 
-# Step 6: 
-#   Setup "Dockerfile"
-#   This file include all the necessary dependencies to run the container
+### Step 6: 🐳 Dockerfile
+#####   Setup "Dockerfile"
+#####   This file include all the necessary dependencies to run the container
+```bash
+# Use official Node.js base image
+FROM node:22
 
-# Step 7:
-#   Setup docker-compose.yml
-#   This file is not necessary but it includes some features like:
-#     • This will overcome to build the docker everytime
-#     • Share setup with your team
-#     • Running multiple services (like Node.js + MongoDB)
-#     • Want to simplify your Docker commands
+# Set working directory
+WORKDIR /app
+
+# Copy only package files to install dependencies first (for caching)
+COPY package*.json ./
+
+# These commands do not install packages on your team members’ local machines. Instead:
+#	•	They run inside the Docker image at build time
+#	•	The resulting image has all packages preinstalled
+#	•	When your team runs the container, everything is already set up
+
+# Install all dependencies from package.json (express, mongoose, etc.)
+RUN npm install
+
+# Install nodemon globally, so the server auto-restarts on changes (can be skipped in prod)
+RUN npm install -g nodemon
+
+# Copy the rest of the application
+COPY . .
+
+# Expose the app port
+EXPOSE 3000
+
+# Default command to run the app with auto-reload
+CMD ["nodemon", "app.js"]
+```
+
+### Step 7: ⚙️ Docker Compose (Optional)
+#####   Setup docker-compose.yml
+#####   This file is not necessary but it includes some features like:
+#####     • This will overcome to build the docker everytime
+#####     • Share setup with your team
+#####     • Running multiple services (like Node.js + MongoDB)
+#####     • Want to simplify your Docker commands
 
 
 ## CI/CD setup (this is not needed for Team Members)
