@@ -4,7 +4,7 @@ A fully Dockerized Node.js development environment using Express, Mongoose, and 
 
 ### 📁 Project Structure
 <pre>
-```text
+```
 ├── app.js
 ├── connection.js
 ├── package.json
