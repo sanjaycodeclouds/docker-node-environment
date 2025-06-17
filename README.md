@@ -110,8 +110,11 @@ EXPOSE 3000
 CMD ["nodemon", "app.js"]
 ```
 
-### Step 7: ⚙️ Docker Compose (Optional)
+### Step 7: ⚙️ Docker Compose (Optional) - Setup GitHub Actions Workflow
 #####   Setup docker-node-environment-deploy.yml
+<pre>
+.github > workflows > docker-node-environment.yml
+</pre>
 <pre>
 This file is not necessary but it includes some features like:
   • This will overcome to build the docker everytime
@@ -166,13 +169,7 @@ Go to your GitHub repo → Settings → Secrets and Variables → Actions:
   • DOCKERHUB_TOKEN: Docker Hub access token with read/write access
 </pre>
 
-### Step 2: 🛠️ Setup GitHub Actions Workflow
-##### Setup docker-node-environment.yml
-<pre>
-.github > workflows > docker-node-environment.yml
-</pre>
-
-### Step 3: 🐳 Docker Hub Setup
+### Step 2: 🐳 Docker Hub Setup
 <pre>
 Docker Hub setup:
   • Go to https://hub.docker.com/
@@ -184,7 +181,7 @@ Docker Hub setup:
   • Copy the token (you won’t see it again!)
 </pre>
 
-### Step 4: 🐙 GitHub Actions CI/CD Setup
+### Step 3: 🐙 GitHub Actions CI/CD Setup
 <pre>
 Add this to GitHub repo:
   • Go to your GitHub repo → Settings → Secrets and variables → Actions
@@ -196,7 +193,7 @@ Add this to GitHub repo:
   • Value: The Docker Hub token you just generated
 </pre>
 
-### Step 5: 📤 Git Push & Commit
+### Step 4: 📤 Git Push & Commit
 <pre>
 Pushing code to the developer branch
 Switch to the Main Branch, merge developer branch here
