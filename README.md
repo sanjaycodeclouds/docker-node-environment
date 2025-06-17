@@ -263,11 +263,11 @@ docker build -t docker-node-app .
 ```
 ##### Run it:
 ```bash
-docker run -d -p 8080:8080 docker-node-app
+docker run -d -p 3000:3000 docker-node-app
 ```
 
 ```bash
-docker run -d -p 5001:5001 sanjaykarmakar/docker-node-environment:v1.1.0
+docker run -d -p 3000:3000 sanjaykarmakar/docker-node-environment:v1.1.0
 ```
 
 ### 🛑 To stop the running container, use:
