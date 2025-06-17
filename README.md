@@ -21,11 +21,14 @@ npm install --save-dev nodemon
 
 ### Step 3: 🛠️ Configure Environment
 #####   Setup .env file
-#   PORT=3000
-#   MONDOGB_URL=mongodb+srv://admin:<password>@cluster0.b4laov4.mongodb.net/<db_name>?retryWrites=true&w=majority&appName=Cluster0
+```bash
+PORT=3000
+MONDOGB_URL=mongodb+srv://admin:<password>@cluster0.b4laov4.mongodb.net/<db_name>?retryWrites=true&w=majority&appName=Cluster0
+```
 
-# Step 4:
-#   Setup connection.js file for MongoDB connect
+### Step 4: 🌐 MongoDB Connection
+#####   Setup connection.js file for MongoDB connect
+```bash
 const mongoose = require("mongoose")
 function connectToMongoDB(url) {
     return mongoose.connect(url)
@@ -33,6 +36,7 @@ function connectToMongoDB(url) {
 module.exports = {
     connectToMongoDB,
 }
+```
 
 # Step 5:
 #   Setup app.js file
