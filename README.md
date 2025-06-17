@@ -267,7 +267,7 @@ docker run -d -p 3000:3000 docker-node-app
 ```
 
 ```bash
-docker run -d -p 3000:3000 sanjaykarmakar/docker-node-environment:v1.1.0
+docker run -d -p 3000:3000 sanjaykarmakar/docker-node-environment:latest
 ```
 
 ### 🛑 To stop the running container, use:
@@ -297,6 +297,10 @@ docker rm 932950d9ae54
 
 
 ### 📝 Changelog (Manual)
+##### [1.1.0] – 2025-06-17
+🎉 **Added platforms Release**
+- Added platforms: linux/amd64,linux/arm64 – ensures compatibility for both x86 and ARM (M1/M2) systems.
+
 ##### [1.0.0] – 2025-06-17
 🎉 **Initial Release**
 - Node.js app containerized with Docker.
