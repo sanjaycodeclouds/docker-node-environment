@@ -203,7 +203,7 @@ jobs:
 <pre>
 Docker Hub setup:
   • Go to https://hub.docker.com/
-  • Click on your profile > Account Settings
+  • Click on your profile → Account Settings
   • Go to Personal Access Token
   • Give it a name like github-ci-cd-token, set expiration
   • Choose access level: Read/Write
