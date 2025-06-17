@@ -4,7 +4,6 @@ A fully Dockerized Node.js development environment using Express, Mongoose, and 
 
 ### 📁 Project Structure
 <pre>
-```
 ├── app.js
 ├── connection.js
 ├── package.json
@@ -12,7 +11,6 @@ A fully Dockerized Node.js development environment using Express, Mongoose, and 
 ├── Dockerfile
 ├── docker-compose.yml
 └── .github/workflows/docker-node-environment-deploy.yml
-```
 </pre>
 
 ### Step 2: Install Dependencies
