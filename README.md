@@ -38,8 +38,42 @@ module.exports = {
 }
 ```
 
-# Step 5:
-#   Setup app.js file
+### Step 5: 🚀 Main App File (app.js)
+#####   Setup app.js file
+```bash
+const express = require("express")
+const bodyParser = require("body-parser")
+const mongoose = require("mongoose")
+const cors = require("cors")
+
+const app = express()
+
+// Setup constants
+const PORT = process.env.PORT || 3000
+const MONGODB_URL = process.env.MONGODB_URL || "MONGODB_URL"
+
+// Middleware
+app.use(cors())
+app.use(bodyParser.urlencoded())
+
+// Connect with MongoDB
+const { connectToMongoDB } = require("./connection")
+
+connectToMongoDB(MONGODB_URL)
+    .then(() => {
+        console.log(`MongoDB connected successfully.`);
+    })
+    .catch((err) => {
+        console.log(`Error in MongoDB connection.`, err.message)
+    })
+
+// Routes
+app.get("/", (req, res) => {
+  res.send(`Node.js Docker Environment Ready!`);
+});
+
+// Server Connection
+app.listen(PORT, () => { console.log(`Server started at port: ${PORT}`);})
 
 # Step 6: 
 #   Setup "Dockerfile"
