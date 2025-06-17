@@ -15,6 +15,7 @@ A fully Dockerized Node.js development environment using Express, Mongoose, and 
 
 ### Step 2: 🔧 Install Dependencies
 ```bash
+npm init
 npm install --save express body-parser mongoose cors dotenv
 npm install --save-dev nodemon
 ```
@@ -78,7 +79,7 @@ app.listen(PORT, () => { console.log(`Server started at port: ${PORT}`);})
 
 ### Step 6: 🐳 Dockerfile
 #####   Setup "Dockerfile"
-#####   This file include all the necessary dependencies to run the container
+#####   This file include all the necessary dependencies to build the image
 ```bash
 # Use official Node.js base image
 FROM node:22
@@ -116,9 +117,7 @@ Pushing code to the branch
 </pre>
 
 ### Step 8: 🔨 Push Docker Image to Docker Hub Manually (without CI/CD)
-<pre>
-Login to Docker Hub from CLI
-</pre>
+##### Login to Docker Hub from CLI
 ```bash
 docker login
 ```
@@ -143,9 +142,7 @@ docker push sanjaykarmakar/docker-node-environment:v1.0.0
 ```
 
 ### Step 12: ✅ Done!
-<pre>
-Now your image will be available for your team to pull and use:
-</pre>
+##### Now your image will be available for your team to pull and use:
 ```bash
 docker pull sanjaykarmakar/docker-node-environment:latest
 ```
@@ -202,14 +199,7 @@ jobs:
             sanjaykarmakar/docker-node-environment:${{ github.sha }}
 ```
 
-### Step 2: 🔐 Create Secrets in GitHub
-<pre>
-Go to your GitHub repo → Settings → Secrets and Variables → Actions:
-  • DOCKERHUB_USERNAME: your Docker Hub username
-  • DOCKERHUB_TOKEN: Docker Hub access token with read/write access
-</pre>
-
-### Step 3: 🐳 Docker Hub Setup
+### Step 2: 🐳 Docker Hub Setup
 <pre>
 Docker Hub setup:
   • Go to https://hub.docker.com/
@@ -221,7 +211,7 @@ Docker Hub setup:
   • Copy the token (you won’t see it again!)
 </pre>
 
-### Step 4: 🐙 GitHub Actions CI/CD Setup
+### Step 3: 🔐 Create Secrets in GitHub
 <pre>
 Add this to GitHub repo:
   • Go to your GitHub repo → Settings → Secrets and variables → Actions
@@ -233,7 +223,7 @@ Add this to GitHub repo:
   • Value: The Docker Hub token you just generated
 </pre>
 
-### Step 5: 📤 Git Push & Commit
+### Step 4: 📤 Git Push & Commit
 <pre>
 Pushing code to the developer branch
 Switch to the Main Branch, merge developer branch here
