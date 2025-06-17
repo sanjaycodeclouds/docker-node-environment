@@ -236,7 +236,7 @@ Push the main branch
 ### 🧪 How Team Members Can Use the Image
 ### Step 1: 🐳 Docker Setup Guide (for Team Members)
 <pre>
-Must have Docker installed on your system.
+Must have Docker installed on team members system.
   • For macOS / Windows:
   • Download Docker Desktop: https://www.docker.com/products/docker-desktop/
   • Install and open Docker Desktop.
