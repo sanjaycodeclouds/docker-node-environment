@@ -77,6 +77,8 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => { console.log(`Server started at port: ${PORT}`);})
 ```
 
+### 🧩 Docker Setup
+
 ### Step 6: 🐳 Dockerfile
 #####   Setup "Dockerfile"
 #####   This file include all the necessary dependencies to build the image
@@ -250,9 +252,28 @@ You must have Docker installed on your system.
 ##### No need to install Node.js, MongoDB manually! or set up anything locally. They can just:
 ```bash
 docker pull sanjaykarmakar/docker-node-environment:latest
-docker run -p 5001:5001 sanjaykarmakar/docker-node-environment:latest
+docker run -d -p 5001:5001 sanjaykarmakar/docker-node-environment:latest
+```
+
+### 🔄 For Local Testing
+##### If you’ve built it locally with:
+```bash
+docker build -t docker-node-app .
+```
+##### Run it:
+```bash
+docker run -d -p 8080:8080 docker-node-app
+```
+
+```bash
+docker run -d -p 5001:5001 sanjaykarmakar/docker-node-environment:v1.1.0
 ```
 
 
 ### 📝 Changelog (Manual)
-  • v1.0.0 – Initial Dockerized setup with Node.js + MongoDB, and GitHub Actions CI/CD.
+##### [1.0.0] – 2025-06-15
+🎉 Initial Release
+•	Node.js app containerized with Docker.
+•	MongoDB connection via mongoose.
+•	CI/CD pipeline set up via GitHub Actions.
+•	Pushed Docker image to Docker Hub:
