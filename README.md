@@ -1,10 +1,10 @@
 # docker-node-environment
 
-## Step-by-Step Setup
+### Main project (this is not needed for Team Members)
+### --------------------------------------------------
+##### Step 1: Folder Structure
 
-## Main project (this is not needed for Team Members)
-## --------------------------------------------------
-# Step 1: Folder Structure
+```bash
 #    ├── app.js
 #    ├── package.json
 #    ├── Dockerfile
