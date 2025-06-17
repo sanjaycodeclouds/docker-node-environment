@@ -2,7 +2,7 @@
 
 ### Main project (this is not needed for Team Members)
 ```bash
-##### Step 1: Folder Structure
+# Step 1: Folder Structure
 #    ├── app.js
 #    ├── package.json
 #    ├── Dockerfile
