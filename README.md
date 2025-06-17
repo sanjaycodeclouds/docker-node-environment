@@ -201,3 +201,15 @@ Add this to GitHub repo:
 Pushing code to the developer branch
 Switch to the Main Branch, merge developer branch here
 </pre>
+
+
+### 🧪 How Team Members Can Use the Image
+##### Team members don’t need to install dependencies or set up anything locally. They can just:
+```bash
+docker pull sanjaykarmakar/docker-node-environment:latest
+docker run -p 5001:5001 sanjaykarmakar/docker-node-environment:latest
+```
+
+
+### 📝 Changelog (Manual)
+  • v1.0.0 – Initial Dockerized setup with Node.js + MongoDB, and GitHub Actions CI/CD.
