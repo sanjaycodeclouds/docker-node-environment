@@ -231,6 +231,23 @@ Switch to the Main Branch, merge developer branch here
 
 
 ### 🧪 How Team Members Can Use the Image
+### Step 1: 🐳 Docker Setup Guide (for Team Members)
+This guide helps you run the Node.js environment using Docker — no need to install Node.js or MongoDB manually!
+<pre>
+You must have Docker installed on your system.
+  • For macOS / Windows:
+  • Download Docker Desktop: https://www.docker.com/products/docker-desktop/
+  • Install and open Docker Desktop.
+  • Ensure Docker is running in the background.
+</pre>
+  • For Linux (Debian/Ubuntu):
+  ```bash
+    sudo apt update
+    sudo apt install docker.io
+    sudo systemctl start docker
+    sudo systemctl enable docker
+  ```
+### Step 2: 🚀 Run the Project Using Docker
 ##### Team members don’t need to install dependencies or set up anything locally. They can just:
 ```bash
 docker pull sanjaykarmakar/docker-node-environment:latest
