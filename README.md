@@ -270,6 +270,31 @@ docker run -d -p 8080:8080 docker-node-app
 docker run -d -p 5001:5001 sanjaykarmakar/docker-node-environment:v1.1.0
 ```
 
+### 🛑 To stop the running container, use:
+##### List all running containers:
+```bash
+docker ps
+```
+##### You’ll see something like:
+```bash
+CONTAINER ID   IMAGE             COMMAND                  PORTS                    NAMES
+932950d9ae54   docker-node-app   "docker-entrypoint..."   0.0.0.0:3000->3000/tcp   brave_mirzakhani
+```
+
+##### Stop the container by ID or name:
+```bash
+docker stop 932950d9ae54
+```
+OR
+```bash
+docker stop brave_mirzakhani
+```
+
+### 🗑️ Optional: Remove the stopped container
+```bash
+docker rm 932950d9ae54
+```
+
 
 ### 📝 Changelog (Manual)
 ##### [1.0.0] – 2025-06-17
