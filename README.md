@@ -191,7 +191,7 @@ Add this to GitHub repo:
   • Value: Your Docker Hub username
   • Click New repository secret
   • Name: DOCKERHUB_TOKEN
-  •	Value: The Docker Hub token you just generated
+  • Value: The Docker Hub token you just generated
 </pre>
 
 ### Step 4:
