@@ -90,9 +90,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # These commands do not install packages on your team members’ local machines. Instead:
-#   • They run inside the Docker image at build time
-#	• The resulting image has all packages preinstalled
-#	• When your team runs the container, everything is already set up
+#  • They run inside the Docker image at build time
+#  • The resulting image has all packages preinstalled
+#  • When your team runs the container, everything is already set up
 
 # Install all dependencies from package.json (express, mongoose, etc.)
 RUN npm install
@@ -111,13 +111,13 @@ CMD ["nodemon", "app.js"]
 ```
 
 ### Step 7: ⚙️ Docker Compose (Optional)
-<pre>
 #####   Setup docker-node-environment-deploy.yml
-#####   This file is not necessary but it includes some features like:
-#####     • This will overcome to build the docker everytime
-#####     • Share setup with your team
-#####     • Running multiple services (like Node.js + MongoDB)
-#####     • Want to simplify your Docker commands
+<pre>
+This file is not necessary but it includes some features like:
+  • This will overcome to build the docker everytime
+  • Share setup with your team
+  • Running multiple services (like Node.js + MongoDB)
+  • Want to simplify your Docker commands
 </pre>
 ```bash
 name: Build & Push Docker Image
@@ -162,36 +162,40 @@ jobs:
 ##### Step 1: 🔐 Create Secrets in GitHub
 <pre>
 Go to your GitHub repo → Settings → Secrets and Variables → Actions:
-	•	DOCKERHUB_USERNAME: your Docker Hub username
-	•	DOCKERHUB_TOKEN: Docker Hub access token with read/write access
+  DOCKERHUB_USERNAME: your Docker Hub username
+  DOCKERHUB_TOKEN: Docker Hub access token with read/write access
 </pre>
 
+##### Step 2:
+<pre>
+Setup .github > workflows > docker-node-environment.yml
+</pre>
 
+##### Step 3:
+<pre>
+Go to https://hub.docker.com/
+Click on your profile > Account Settings
+Go to Personal Access Token
+Give it a name like github-ci-cd-token, set expiration
+Choose access level: Read/Write
+Click Generate
+Copy the token (you won’t see it again!)
+</pre>
 
-#   Switch to deloper branch (recommended)
+##### Step 4:
+<pre>
+Add this to GitHub repo:
+  • Go to your GitHub repo → Settings → Secrets and variables → Actions
+  • Click New repository secret
+  • Name: DOCKERHUB_USERNAME
+  • Value: Your Docker Hub username
+  • Click New repository secret
+  • Name: DOCKERHUB_TOKEN
+  •	Value: The Docker Hub token you just generated
+</pre>
 
-# Step 2:
-#   Setup .github > workflows > docker-node-environment.yml
-
-# Step 3:
-#   Go to https://hub.docker.com/
-#   Click on your profile > Account Settings
-#   Go to Personal Access Token
-#   Give it a name like github-ci-cd-token, set expiration
-#   Choose access level: Read/Write
-#   Click Generate
-#   Copy the token (you won’t see it again!)
-
-# Step 4:
-#   Then add this to GitHub repo:
-#     • Go to your GitHub repo → Settings → Secrets and variables → Actions
-#     • Click New repository secret
-#     • Name: DOCKERHUB_USERNAME
-#     • Value: Your Docker Hub username
-#     • Click New repository secret
-#     • Name: DOCKERHUB_TOKEN
-#     •	Value: The Docker Hub token you just generated
-
-# Step 4:
-#   Pushing code to the developer branch
-#   Switch to the Main Branch, merge developer branch here
+##### Step 4:
+<pre>
+Pushing code to the developer branch
+Switch to the Main Branch, merge developer branch here
+</pre>
