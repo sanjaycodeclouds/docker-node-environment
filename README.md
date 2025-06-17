@@ -159,10 +159,10 @@ docker pull sanjaykarmakar/docker-node-environment:latest
 </pre>
 <pre>
 This file is not necessary but it includes some features like:
-  • This will overcome to build the docker everytime
-  • Share setup with your team
-  • Running multiple services (like Node.js + MongoDB)
-  • Want to simplify your Docker commands
+- This will overcome to build the docker everytime
+- Share setup with your team
+- Running multiple services (like Node.js + MongoDB)
+- Want to simplify your Docker commands
 </pre>
 ```bash
 name: Build & Push Docker Image
@@ -204,25 +204,25 @@ jobs:
 ### Step 2: 🐳 Docker Hub Setup
 <pre>
 Docker Hub setup:
-  • Go to https://hub.docker.com/
-  • Click on your profile → Account Settings
-  • Go to Personal Access Token
-  • Give it a name like github-ci-cd-token, set expiration
-  • Choose access level: Read/Write
-  • Click Generate
-  • Copy the token (you won’t see it again!)
+- Go to https://hub.docker.com/
+- Click on your profile → Account Settings
+- Go to Personal Access Token
+- Give it a name like github-ci-cd-token, set expiration
+- Choose access level: Read/Write
+- Click Generate
+- Copy the token (you won’t see it again!)
 </pre>
 
 ### Step 3: 🔐 Create Secrets in GitHub
 <pre>
 Add this to GitHub repo:
-  • Go to your GitHub repo → Settings → Secrets and variables → Actions
-  • Click New repository secret
-  • Name: DOCKERHUB_USERNAME
-  • Value: Your Docker Hub username
-  • Click New repository secret
-  • Name: DOCKERHUB_TOKEN
-  • Value: The Docker Hub token you just generated
+- Go to your GitHub repo → Settings → Secrets and variables → Actions
+- Click New repository secret
+- Name: DOCKERHUB_USERNAME
+- Value: Your Docker Hub username
+- Click New repository secret
+- Name: DOCKERHUB_TOKEN
+- Value: The Docker Hub token you just generated
 </pre>
 
 ### Step 4: 📤 Git Push & Commit
@@ -236,12 +236,12 @@ Switch to the Main Branch, merge developer branch here
 ### Step 1: 🐳 Docker Setup Guide (for Team Members)
 <pre>
 You must have Docker installed on your system.
-  • For macOS / Windows:
-  • Download Docker Desktop: https://www.docker.com/products/docker-desktop/
-  • Install and open Docker Desktop.
-  • Ensure Docker is running in the background.
+- For macOS / Windows:
+- Download Docker Desktop: https://www.docker.com/products/docker-desktop/
+- Install and open Docker Desktop.
+- Ensure Docker is running in the background.
 </pre>
-  • For Linux (Debian/Ubuntu):
+- For Linux (Debian/Ubuntu):
   ```bash
     sudo apt update
     sudo apt install docker.io
