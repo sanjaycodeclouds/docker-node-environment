@@ -196,7 +196,7 @@ Add this to GitHub repo:
   • Value: The Docker Hub token you just generated
 </pre>
 
-### Step 4:
+### Step 5: 📤 Git Push & Commit
 <pre>
 Pushing code to the developer branch
 Switch to the Main Branch, merge developer branch here
