@@ -3,13 +3,14 @@
 A fully Dockerized Node.js development environment using Express, Mongoose, and other essential packages. Includes CI/CD integration using GitHub Actions to automatically build and push Docker images to Docker Hub.
 
 ### 📁 Project Structure
-####   ├── app.js
-####   ├── connection.js
-#####   ├── package.json
-#####   ├── .env
-#####   ├── Dockerfile
-#####   ├── docker-compose.yml
-#####   ├── .github/workflows/docker-node-environment-deploy.yml
+```bash
+├── app.js
+├── connection.js
+├── package.json
+├── .env
+├── Dockerfile
+├── docker-compose.yml
+└── .github/workflows/docker-node-environment-deploy.yml
 
 ### Step 2: Install Dependencies
 ```bash
