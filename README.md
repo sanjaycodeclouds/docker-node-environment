@@ -251,53 +251,81 @@ Must have Docker installed on team members system.
   ```
 ### Step 2: 🚀 Run the Project Using Docker (for Team Members)
 ##### No need to install Node.js, MongoDB manually! or set up anything locally. They can just:
+##### Pulled the image
 ```bash
 docker pull sanjaykarmakar/docker-node-environment:latest
-docker run -d -p 5001:5001 sanjaykarmakar/docker-node-environment:latest
 ```
 
-### 🔄 For Local Testing
-##### If you’ve built it locally with:
+
+### Step 3: 📁 Create a Local Project Folder (if not already) (for Team Members)
+##### If you haven’t copied the code from the container, create a folder to mount your work into:
+##### Copied files out of the container to local folder
 ```bash
-docker build -t docker-node-app .
-```
-##### Run it:
-```bash
-docker run -d -p 3000:3000 docker-node-app
+docker run --name temp-node-app -d sanjaykarmakar/docker-node-environment:latest
+
+docker cp <container_id>:/app ./my-node-app
+cd my-node-app
+
+docker stop temp-node-app
+docker rm temp-node-app
 ```
 
+### ✅ Step 4: You should run:
+##### Every time you do the changes it will reflect
 ```bash
+docker run -d -p 3000:3000 -v "$(pwd)":/app -w /app sanjaykarmakar/docker-node-environment:latest
+```
+
+
+### 🔁 Rebuild & Push Updated Docker Image
+##### If your team member adds a new package, they’ve changed the package.json (and probably package-lock.json). To reflect this change in Docker Hub, they must follow these steps:
+
+##### ✅ Steps Your Team Member Must Follow After Adding a New Package
+```bash
+docker build -t sanjaykarmakar/docker-node-environment:latest .
+```
+<pre>
+OR
+</pre>
+
+```bash
+docker build -t sanjaykarmakar/docker-node-environment:v1.0.2 .
+```
+
+##### Push the Updated Image to Docker Hub
+```bash
+docker push sanjaykarmakar/docker-node-environment:latest
+```
+<pre>
+Or with a version tag:
+</pre>
+```bash
+docker push sanjaykarmakar/docker-node-environment:v1.1.1
+```
+
+### ✅ Other Team Members Can Now Pull the Latest Image
+```bash
+docker pull sanjaykarmakar/docker-node-environment:latest
 docker run -d -p 3000:3000 sanjaykarmakar/docker-node-environment:latest
 ```
 
-### 🛑 To stop the running container, use:
-##### List all running containers:
-```bash
-docker ps
-```
-##### You’ll see something like:
-```bash
-CONTAINER ID   IMAGE             COMMAND                  PORTS                    NAMES
-932950d9ae54   docker-node-app   "docker-entrypoint..."   0.0.0.0:3000->3000/tcp   brave_mirzakhani
-```
+### 📌 In Short:
+##### Every time the code or dependencies change, rebuild and push a new Docker image to Docker Hub.
 
-##### Stop the container by ID or name:
-```bash
-docker stop 932950d9ae54
-```
-OR
-```bash
-docker stop brave_mirzakhani
-```
 
-### 🗑️ Optional: Remove the stopped container
-```bash
-docker rm 932950d9ae54
-```
+
+
+
+
 
 
 ### 📝 Changelog (Manual)
-##### [1.1.0] – 2025-06-17
+##### [1.1.0] – 2025-06-19
+🎉 **Added Steps For Team Member To Use The Docker Image, Install Packages And Push To The Docker Hub Release**
+- Added steps for team member to use the Docker Image, install packages and push to the Docker Hub.
+
+
+##### [1.1.0] – 2025-06-18
 🎉 **Added platforms Release**
 - Added platforms: linux/amd64,linux/arm64 – ensures compatibility for both x86 and ARM (M1/M2) systems.
 
